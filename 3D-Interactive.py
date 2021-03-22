@@ -62,6 +62,12 @@ def main():
             glRotatef(1, 1, 0, 0)
         if keys[pygame.K_DOWN]:
             glRotatef(1, -1, 0, 0)
+        if keys[pygame.K_RIGHT]:
+            glRotatef(1, 0, 1, 0)
+        if keys[pygame.K_LEFT]:
+            glRotatef(1, 0, -1, 0)
+        if keys[pygame.K_c]:
+            verts()
         if keys[pygame.K_b]:
             verticies[1][1] += 0.09
             verticies[2][1] += 0.09
@@ -73,8 +79,6 @@ def main():
             verticies[5][1] -= 0.09
             verticies[7][1] -= 0.09
             
-            
-
         glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)    
         Cube()
         
