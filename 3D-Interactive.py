@@ -40,7 +40,7 @@ def Cube():
     glEnd()
     
 def main():
-    global verticies
+    global verticies, dist
     pygame.init()
     display = (1000, 650)
     pygame.display.set_mode(display, DOUBLEBUF|OPENGL)
@@ -68,6 +68,10 @@ def main():
             glRotatef(1, 0, -1, 0)
         if keys[pygame.K_c]:
             verts()
+        if keys[pygame.K_z]:
+            glTranslatef(0.0,0.0,-0.1)
+        if keys[pygame.K_x]:
+            glTranslatef(0.0,0.0,0.1)
         if keys[pygame.K_b]:
             verticies[1][1] += 0.09
             verticies[2][1] += 0.09
