@@ -72,6 +72,14 @@ def main():
             glTranslatef(0.0,0.0,-0.1)
         if keys[pygame.K_x]:
             glTranslatef(0.0,0.0,0.1)
+        if keys[pygame.K_a]:
+            glTranslatef(-0.1,0.0,0.0)
+        if keys[pygame.K_s]:
+            glTranslatef(0.1,0.0,0.0)
+        if keys[pygame.K_q]:
+            glTranslatef(0.0,-0.1,0.0)
+        if keys[pygame.K_w]:
+            glTranslatef(0.0,0.1,0.0)
         if keys[pygame.K_b]:
             verticies[1][1] += 0.09
             verticies[2][1] += 0.09
