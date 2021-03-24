@@ -66,6 +66,10 @@ def main():
             glRotatef(1, 0, 1, 0)
         if keys[pygame.K_LEFT]:
             glRotatef(1, 0, -1, 0)
+        if keys[pygame.K_k]:
+            glRotatef(1, 0, 0, 1)
+        if keys[pygame.K_l]:
+            glRotatef(1, 0, 0, -1)
         if keys[pygame.K_c]:
             verts()
         if keys[pygame.K_z]:
