@@ -40,7 +40,7 @@ def Cube():
     glEnd()
     
 def main():
-    global verticies, dist
+    global verticies
     pygame.init()
     display = (1200, 680)#(1600,900)
     pygame.display.set_mode(display, DOUBLEBUF|OPENGL)
