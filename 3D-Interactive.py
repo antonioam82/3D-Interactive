@@ -42,7 +42,7 @@ def Cube():
 def main():
     global verticies, dist
     pygame.init()
-    display = (1000, 650)
+    display = (1200, 680)#(1600,900)
     pygame.display.set_mode(display, DOUBLEBUF|OPENGL)
 
     verts()
@@ -98,10 +98,20 @@ def main():
             verticies[6][0] += 0.09
             verticies[7][0] += 0.09
         if keys[pygame.K_j]:
-            verticies[2][0] -= 0.09 #2
+            verticies[2][0] -= 0.09 
             verticies[3][0] -= 0.09
             verticies[6][0] -= 0.09
             verticies[7][0] -= 0.09
+        if keys[pygame.K_n]:
+            verticies[0][1] -= 0.09 
+            verticies[3][1] -= 0.09
+            verticies[4][1] -= 0.09
+            verticies[6][1] -= 0.09
+        if keys[pygame.K_m]:
+            verticies[0][1] += 0.09 
+            verticies[3][1] += 0.09
+            verticies[4][1] += 0.09
+            verticies[6][1] += 0.09            
             
         glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)    
         Cube()
@@ -110,3 +120,4 @@ def main():
         pygame.time.wait(10)
 
 main()
+   
