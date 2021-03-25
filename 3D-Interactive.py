@@ -94,22 +94,22 @@ def main():
             verticies[2][1] -= 0.09
             verticies[5][1] -= 0.09
             verticies[7][1] -= 0.09
-        if keys[pygame.K_g]:
+        if keys[pygame.K_h]:#h
             verticies[0][0] += 0.09 #2
             verticies[1][0] += 0.09
             verticies[5][0] += 0.09
             verticies[4][0] += 0.09
-        if keys[pygame.K_f]:
+        if keys[pygame.K_j]:#j
             verticies[0][0] -= 0.09
             verticies[1][0] -= 0.09
             verticies[5][0] -= 0.09
             verticies[4][0] -= 0.09
-        if keys[pygame.K_h]:
+        if keys[pygame.K_f]:#f
             verticies[2][0] += 0.09 #2
             verticies[3][0] += 0.09
             verticies[6][0] += 0.09
             verticies[7][0] += 0.09
-        if keys[pygame.K_j]:
+        if keys[pygame.K_g]:#g
             verticies[2][0] -= 0.09 
             verticies[3][0] -= 0.09
             verticies[6][0] -= 0.09
