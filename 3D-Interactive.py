@@ -123,7 +123,28 @@ def main():
             verticies[0][1] += 0.09 
             verticies[3][1] += 0.09
             verticies[4][1] += 0.09
-            verticies[6][1] += 0.09            
+            verticies[6][1] += 0.09
+        if keys[pygame.K_r]:
+            verticies[4][2] += 0.09 
+            verticies[5][2] += 0.09
+            verticies[6][2] += 0.09
+            verticies[7][2] += 0.09
+        if keys[pygame.K_t]:
+            verticies[4][2] -= 0.09 
+            verticies[5][2] -= 0.09
+            verticies[6][2] -= 0.09
+            verticies[7][2] -= 0.09
+        if keys[pygame.K_y]:
+            verticies[0][2] += 0.09 
+            verticies[1][2] += 0.09
+            verticies[2][2] += 0.09
+            verticies[3][2] += 0.09
+        if keys[pygame.K_u]:
+            verticies[0][2] -= 0.09 
+            verticies[1][2] -= 0.09
+            verticies[2][2] -= 0.09
+            verticies[3][2] -= 0.09
+        
             
         glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)    
         Cube()
