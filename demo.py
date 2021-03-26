@@ -73,6 +73,7 @@ def main():
     pygame.init()
     display = (1200, 680)#(1600,900)
     pygame.display.set_mode(display, DOUBLEBUF|OPENGL)
+    glClearColor(0, 0.1, 0.1, 1)
 
     verts()
     gluPerspective(45, (display[0]/display[1]), 0.1, 50.0)
