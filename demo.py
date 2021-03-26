@@ -6,31 +6,61 @@ from OpenGL.GLU import *
 def verts():
     global verticies
     verticies = [
-    [0, 1, 0],
-    [1, 0, -1],
-    [-1, 0, -1],
-    [1, 0, 1],
-    [-1, 0, 1],
-    [0, -1, 0]
+    [0, 1, 0],#top
+    [1, 0, -1],#del der
+    [-1, 0, -1],#del iz
+    [1, 0, 1],#tras der
+    [-1, 0, 1],#tras iz
+    [0, -1, 0]#bottom
     ]
-
-edges = (
+    
+edges =(
     (0,1),
-    (2,1),
-    (0,4),
     (0,2),
     (0,3),
-    (4,2),
+    (0,4),
     (1,3),
+    (2,1),
+    (4,2),
     (4,3),
     (5,1),
-    (5,4),
     (5,2),
-    (5,3)
+    (5,3),
+    (5,4)
     )
+
+surfaces = (
+    (3,0,4),
+    (4,0,2),
+    (2,0,1),
+    (1,0,3),
+    (3,5,4),
+    (4,5,2),
+    (2,5,1),
+    (1,5,3)
+    )
+
+
+colors = (
+    (1,1,0),
+    (0,1,0),
+    (1,0,1),
+    (0,1,1),
+    (0,1,1),
+    (0,1,0),
+    )    
     
 
 def Triangle():
+    glBegin(GL_TRIANGLES)
+    for surface in surfaces:
+        x=0
+        for vertex in surface:
+            x+=1
+            glColor3fv(colors[x])
+            glVertex3fv(verticies[vertex])
+    glEnd()
+            
     glBegin(GL_LINES)
     for edge in edges:
         for vertex in edge:
@@ -70,6 +100,8 @@ def main():
             glRotatef(1, 0, 0, 1)
         if keys[pygame.K_l]:
             glRotatef(1, 0, 0, -1)
+        if keys[pygame.K_p]:
+            glRotatef(0, 0, 0, 0)
         if keys[pygame.K_c]:
             verts()
         if keys[pygame.K_z]:
@@ -86,6 +118,7 @@ def main():
             glTranslatef(0.0,0.1,0.0)
 
         
+            
         glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)    
         Triangle()
         
