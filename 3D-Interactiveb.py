@@ -16,21 +16,6 @@ def verts():
     [-1, 1, 1]#del sup iz
     ]
 
-plane_verts = [
-    [2, -1, -2],
-    [-2, -1, -2],
-    [2, -1, 2],
-    [-2, -1, 2]
-    ]
-
-plane_edges = (
-    (0,1),
-    (1,3),
-    (3,2),
-    (2,0)
-    )
-
-
 edges = (
     (0,1),
     (0,3),
@@ -40,21 +25,80 @@ edges = (
     (2,7),
     (6,3),
     (6,4),
-    
     (6,7),
     (5,1),
     (5,4),
     (5,7)
     )
 
+surfaces = (
+    (0,1,2,3),
+    (3,2,7,6),
+    (6,7,5,4),
+    (4,5,1,0),
+    (1,5,7,2),
+    (4,0,3,6)
+    )
+
+colors = (
+    (1,0,0),
+    (0,1,0),
+    (0,0,1),
+    (0,1,0),
+    (1,1,1),
+    (0,1,1),
+    (1,0,0),
+    (0,1,0),
+    (0,0,1),
+    (0,1,0),
+    (1,1,1),
+    (0,1,1)
+    )
+
+floor_verts = [
+    [2, -1, -2],
+    [-2, -1, -2],
+    [2, -1, 2],
+    [-2, -1, 2],
+    ]
+
+floor_edges = (
+    (0,1),
+    (1,3),
+    (3,2),
+    (2,0)
+    )
+
+floor_surface = (
+    (0,1,2,3),
+    )
+
 def floor():
-    glBegin(GL_LINES)
-    for edge in plane_edges:
-        for vertex in edge:
-            glVertex3fv(plane_verts[vertex])
+    glBegin(GL_QUAD_STRIP)
+    for surface in floor_surface:
+        for vertex in surface:
+            glColor3fv((3,0,2))
+            glVertex3fv(floor_verts[vertex])
     glEnd()
 
+    glBegin(GL_LINES)
+    for edge in floor_edges:
+        for vertex in edge:
+            glVertex3fv(floor_verts[vertex])
+    glEnd()
+
+    
+
 def Cube():
+    glBegin(GL_QUADS)
+    for surface in surfaces:
+        x=0
+        for vertex in surface:
+            x+=1
+            glColor3fv(colors[x])
+            glVertex3fv(verticies[vertex])
+    glEnd()
+    
     glBegin(GL_LINES)
     for edge in edges:
         for vertex in edge:
@@ -169,9 +213,9 @@ def main():
             verticies[3][2] -= 0.09
         
             
-        glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)    
-        Cube()
+        glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
         floor()
+        Cube()
         
         pygame.display.flip()
         pygame.time.wait(10)
