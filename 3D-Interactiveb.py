@@ -56,10 +56,10 @@ colors = (
     )
 
 floor_verts = [
-    [2, -1, -2],
-    [-2, -1, -2],
-    [2, -1, 2],
-    [-2, -1, 2],
+    [20, -1, -20],
+    [-20, -1, -20],
+    [20, -1, 20],
+    [-20, -1, 20],
     ]
 
 floor_edges = (
@@ -77,7 +77,7 @@ def floor():
     glBegin(GL_QUAD_STRIP)
     for surface in floor_surface:
         for vertex in surface:
-            glColor3fv((3,0,2))
+            glColor3fv((0,1,1))
             glVertex3fv(floor_verts[vertex])
     glEnd()
 
@@ -113,7 +113,7 @@ def main():
     pygame.display.set_mode(display, DOUBLEBUF|OPENGL)
 
     verts()
-    gluPerspective(45, (display[0]/display[1]), 0.1, 50.0)
+    gluPerspective(60, (display[0]/display[1]), 0.1, 50.0)
     glTranslatef(0.0,0.0,-5)
     #glRotatef(0, 0, 0, 0)
 
@@ -125,24 +125,6 @@ def main():
         keys = pygame.key.get_pressed()
         
 
-        if keys[pygame.K_UP]:
-            glRotatef(1, -1, 0, 0)
-        if keys[pygame.K_DOWN]:
-            glRotatef(1, 1, 0, 0)
-        if keys[pygame.K_RIGHT]:
-            glRotatef(1, 0, 1, 0)
-        if keys[pygame.K_LEFT]:
-            glRotatef(1, 0, -1, 0)
-        if keys[pygame.K_k]:
-            glRotatef(1, 0, 0, 1)
-        if keys[pygame.K_l]:
-            glRotatef(1, 0, 0, -1)
-        if keys[pygame.K_c]:
-            verts()
-        if keys[pygame.K_z]:
-            glTranslatef(0.0,0.0,-0.1)
-        if keys[pygame.K_x]:
-            glTranslatef(0.0,0.0,0.1)
         if keys[pygame.K_a]:
             glTranslatef(-0.1,0.0,0.0)
         if keys[pygame.K_s]:
@@ -151,66 +133,46 @@ def main():
             glTranslatef(0.0,-0.1,0.0)
         if keys[pygame.K_w]:
             glTranslatef(0.0,0.1,0.0)
-        if keys[pygame.K_b]:
-            verticies[1][1] += 0.09
-            verticies[2][1] += 0.09
-            verticies[5][1] += 0.09
-            verticies[7][1] += 0.09
-        if keys[pygame.K_v]:
-            verticies[1][1] -= 0.09
-            verticies[2][1] -= 0.09
-            verticies[5][1] -= 0.09
-            verticies[7][1] -= 0.09
-        if keys[pygame.K_h]:#h
-            verticies[0][0] += 0.09 #2
-            verticies[1][0] += 0.09
-            verticies[5][0] += 0.09
-            verticies[4][0] += 0.09
-        if keys[pygame.K_j]:#j
-            verticies[0][0] -= 0.09
-            verticies[1][0] -= 0.09
-            verticies[5][0] -= 0.09
-            verticies[4][0] -= 0.09
-        if keys[pygame.K_f]:#f
+        if keys[pygame.K_z]:
+            glTranslatef(0.0,0.0,-0.1)
+        if keys[pygame.K_x]:
+            glTranslatef(0.0,0.0,0.1)
+        if keys[pygame.K_RIGHT]:
             verticies[2][0] += 0.09 #2
             verticies[3][0] += 0.09
             verticies[6][0] += 0.09
             verticies[7][0] += 0.09
-        if keys[pygame.K_g]:#g
-            verticies[2][0] -= 0.09 
+            verticies[0][0] += 0.09 #2
+            verticies[1][0] += 0.09
+            verticies[5][0] += 0.09
+            verticies[4][0] += 0.09
+        if keys[pygame.K_LEFT]:
+            verticies[2][0] -= 0.09 #2
             verticies[3][0] -= 0.09
             verticies[6][0] -= 0.09
             verticies[7][0] -= 0.09
-        if keys[pygame.K_n]:
-            verticies[0][1] -= 0.09 
-            verticies[3][1] -= 0.09
-            verticies[4][1] -= 0.09
-            verticies[6][1] -= 0.09
-        if keys[pygame.K_m]:
-            verticies[0][1] += 0.09 
-            verticies[3][1] += 0.09
-            verticies[4][1] += 0.09
-            verticies[6][1] += 0.09
-        if keys[pygame.K_r]:
+            verticies[0][0] -= 0.09 #2
+            verticies[1][0] -= 0.09
+            verticies[5][0] -= 0.09
+            verticies[4][0] -= 0.09
+        if keys[pygame.K_DOWN]:
             verticies[4][2] += 0.09 
             verticies[5][2] += 0.09
             verticies[6][2] += 0.09
             verticies[7][2] += 0.09
-        if keys[pygame.K_t]:
-            verticies[4][2] -= 0.09 
-            verticies[5][2] -= 0.09
-            verticies[6][2] -= 0.09
-            verticies[7][2] -= 0.09
-        if keys[pygame.K_y]:
             verticies[0][2] += 0.09 
             verticies[1][2] += 0.09
             verticies[2][2] += 0.09
             verticies[3][2] += 0.09
-        if keys[pygame.K_u]:
+        if keys[pygame.K_UP]:
+            verticies[4][2] -= 0.09 
+            verticies[5][2] -= 0.09
+            verticies[6][2] -= 0.09
+            verticies[7][2] -= 0.09
             verticies[0][2] -= 0.09 
             verticies[1][2] -= 0.09
             verticies[2][2] -= 0.09
-            verticies[3][2] -= 0.09
+            verticies[3][2] -= 0.09            
         
             
         glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
