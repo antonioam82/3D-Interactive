@@ -80,7 +80,7 @@ def tmode():
         textures = False
     else:
         textures = True
-    time.sleep(0.5)
+    time.sleep(0.1)
 
 def floor():
     if textures == True:
