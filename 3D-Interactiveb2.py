@@ -83,7 +83,7 @@ def tmode():
     time.sleep(0.1)
 
 def floor():
-    if textures == True:
+    if textures:
         glBegin(GL_QUAD_STRIP)
         for surface in floor_surface:
             for vertex in surface:
@@ -100,7 +100,7 @@ def floor():
     
 
 def Cube():
-    if textures == True:
+    if textures:
         glBegin(GL_QUADS)
         for surface in surfaces:
             x=0
