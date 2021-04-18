@@ -157,7 +157,8 @@ def main():
             glTranslatef(0.0,0.0,-0.1)
         if keys[pygame.K_x]:
             glTranslatef(0.0,0.0,0.1)
-            
+
+        #MAKE THE CUBE 'WALK'.
         if keys[pygame.K_y]:
             verticies[2][2] += 0.09 
             verticies[3][2] += 0.09
