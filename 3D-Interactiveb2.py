@@ -180,6 +180,26 @@ def main():
             verticies[5][2] -= 0.09
             verticies[4][2] -= 0.09
             
+        if keys[pygame.K_e]:
+            verticies[2][0] += 0.09 
+            verticies[3][0] += 0.09
+            verticies[0][0] += 0.09
+            verticies[1][0] += 0.09
+        if keys[pygame.K_r]:
+            verticies[6][0] += 0.09 
+            verticies[7][0] += 0.09
+            verticies[5][0] += 0.09
+            verticies[4][0] += 0.09
+        if keys[pygame.K_d]:
+            verticies[2][0] -= 0.09 
+            verticies[3][0] -= 0.09
+            verticies[0][0] -= 0.09
+            verticies[1][0] -= 0.09
+        if keys[pygame.K_f]:
+            verticies[6][0] -= 0.09 
+            verticies[7][0] -= 0.09
+            verticies[5][0] -= 0.09
+            verticies[4][0] -= 0.09
             
         if keys[pygame.K_RIGHT]:
             verticies[2][0] += 0.09 #2
