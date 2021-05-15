@@ -35,7 +35,7 @@ edges = (
 def increase(o):
     global verticies
     if o == "inc":
-        verticies[0][0]+=001
+        verticies[0][0]+=00.1
         verticies[0][1]-=00.1
         verticies[0][2]-=00.1
         verticies[1][0]+=00.1
