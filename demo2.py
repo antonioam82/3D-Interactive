@@ -16,6 +16,19 @@ def verts():
     [-1, 1, 1]#del sup iz
     ]
 
+def major_verts():
+    global verties
+    verties = [
+    [5, -2, -5],
+    [5, 2, -5],#det sup der
+    [-5, 2, -5],#det sup iz
+    [-5, -2, -5],#det inf iz
+    [5, -2, 5],#del inf der
+    [5, 2, 5],#del sup der
+    [-5, -2, 5],#del inf der
+    [-5, 2, 5]#del sup iz
+    ]
+
 edges = (
     (0,1),
     (0,3),
@@ -41,18 +54,18 @@ surfaces = (
     )
 
 colors = (
-    (1,0,1),
-    (1,1,0),
+    (0,0,1),
+    (0,1,0),
     (0,0,1),
     (1,0,0),
     (1,1,0),
     (1,0,0),
-    (1,0,1),
-    (1,0,1),
-    (0,1,0),
+    (0,0,1),
     (1,0,1),
     (0,1,0),
-    (0,1,1)
+    (1,0,0),
+    (0,1,0),
+    (0,1,0)
     )
 
 def increase(o):
@@ -106,7 +119,14 @@ def increase(o):
         verticies[6][2]-=0.05
         verticies[7][0]+=0.05
         verticies[7][1]-=0.05
-        verticies[7][2]-=0.05      
+        verticies[7][2]-=0.05
+
+def room():
+    glBegin(GL_LINES)
+    for edge in edges:
+        for vertex in edge:
+            glVertex3fv(verties[vertex])
+    glEnd()
             
 
 def Cube():
@@ -127,11 +147,11 @@ def Cube():
     glEnd()
     
 def main():
-    global verticies
+    global verticies, verties
     pygame.init()
     display = (1200, 680)#(1600,900)
     pygame.display.set_mode(display, DOUBLEBUF|OPENGL)
-
+    major_verts()
     verts()
     gluPerspective(45, (display[0]/display[1]), 0.1, 50.0)
     glTranslatef(0.0,0.0,-5)
@@ -150,9 +170,7 @@ def main():
         if keys[pygame.K_DOWN]:
             glRotatef(1, 1, 0, 0)
         if keys[pygame.K_RIGHT]:
-            glRotatef(1, 0, 1, 0)
-        if keys[pygame.K_l]:
-            glRotatef(1, 0, 0, -1)
+            glRotatef(1, 0, 9, 0)
         if keys[pygame.K_c]:
             verts()
         if keys[pygame.K_i]:
@@ -161,13 +179,28 @@ def main():
             increase("dec")
 
         if keys[pygame.K_k]:
-            verticies[1][1]-=0.009
-            verticies[2][1]-=0.009
-            verticies[5][1]-=0.009
-            verticies[7][1]-=0.009
+            verticies[1][1]-=0.019
+            verticies[2][1]-=0.019
+            verticies[5][1]-=0.019
+            verticies[7][1]-=0.019
+            verticies[3][1]+=0.019
+            verticies[4][1]+=0.019
+            verticies[6][1]+=0.019
+            verticies[0][1]+=0.019
+
+        if keys[pygame.K_l]:
+            verticies[1][1]+=0.019
+            verticies[2][1]+=0.019
+            verticies[5][1]+=0.019
+            verticies[7][1]+=0.019
+            verticies[3][1]-=0.019
+            verticies[4][1]-=0.019
+            verticies[6][1]-=0.019
+            verticies[0][1]-=0.019            
         
             
-        glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)    
+        glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
+        room()
         Cube()
         
         pygame.display.flip()
