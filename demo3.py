@@ -41,6 +41,19 @@ def C2_verts():
     [-2, -1, 1],#inf, izg, del
     [-2, 1, 1]#sup, izq, del        
     ]
+
+def C3_verts():
+    global verticies3
+    verticies3 = [
+    [1, 4, -1],#inf, der, tras
+    [1, 2, -1],#sup, der, tras
+    [-1, 2, -1],#sup, izq, tras
+    [-1, 4, -1],#inf, izq, tras
+    [1, 4, 1],#inf, der, del
+    [1, 2, 1],#sup, der, del
+    [-1, 4, 1],#inf, izg, del
+    [-1, 2, 1]#sup, izq, del
+    ]        
     
 edges = (
     (0,1),
@@ -78,10 +91,18 @@ def Cube2():
     for edge in edges:
         for vertex in edge:
             glVertex3fv(verticies2[vertex])
-    glEnd()    
+    glEnd()
+    
+def Cube3():
+    glBegin(GL_LINES)
+    for edge in edges:
+        for vertex in edge:
+            glVertex3fv(verticies3[vertex])
+    glEnd()
+
     
 def main():
-    global verticies, verticies1, verticies2
+    global verticies, verticies1, verticies2, verticies3
     pygame.init()
     display = (1200, 680)#(1600,900)
     pygame.display.set_mode(display, DOUBLEBUF|OPENGL)
@@ -89,6 +110,7 @@ def main():
     verts()
     C1_verts()
     C2_verts()
+    C3_verts()
     
     gluPerspective(45, (display[0]/display[1]), 0.1, 50.0)
     glTranslatef(0.0,0.0,-5)
@@ -125,6 +147,7 @@ def main():
         Cube()
         Cube1()
         Cube2()
+        Cube3()
         
         pygame.display.flip()
         pygame.time.wait(10)
