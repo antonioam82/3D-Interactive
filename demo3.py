@@ -165,7 +165,9 @@ def main():
     global verticies, verticies1, verticies2, verticies3, verticies4, verticies5, verticies6
     pygame.init()
     display = (1200, 680)#(1600,900)
+    
     pygame.display.set_mode(display, DOUBLEBUF|OPENGL)
+    glClearColor(0, 0, 1, 1)
 
     verts()
     C1_verts()
