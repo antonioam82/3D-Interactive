@@ -29,6 +29,19 @@ def C1_verts():
     [2, 1, 1]#sup, izq, del
     ]
 
+def C2_verts():
+    global verticies2
+    verticies2 = [
+    [-4, -1, -1],#inf, der, tras
+    [-4, 1, -1],#sup, der, tras
+    [-2, 1, -1],#sup, izq, tras
+    [-2, -1, -1],#inf, izq, tras
+    [-4, -1, 1],#inf, der, del
+    [-4, 1, 1],#sup, der, del
+    [-2, -1, 1],#inf, izg, del
+    [-2, 1, 1]#sup, izq, del        
+    ]
+    
 edges = (
     (0,1),
     (0,3),
@@ -59,15 +72,23 @@ def Cube1():
         for vertex in edge:
             glVertex3fv(verticies1[vertex])
     glEnd()
+
+def Cube2():
+    glBegin(GL_LINES)
+    for edge in edges:
+        for vertex in edge:
+            glVertex3fv(verticies2[vertex])
+    glEnd()    
     
 def main():
-    global verticies, verticies1
+    global verticies, verticies1, verticies2
     pygame.init()
     display = (1200, 680)#(1600,900)
     pygame.display.set_mode(display, DOUBLEBUF|OPENGL)
 
     verts()
     C1_verts()
+    C2_verts()
     
     gluPerspective(45, (display[0]/display[1]), 0.1, 50.0)
     glTranslatef(0.0,0.0,-5)
@@ -88,7 +109,7 @@ def main():
         if keys[pygame.K_RIGHT]:
             glRotatef(1, 0, 1, 0)
         if keys[pygame.K_LEFT]:
-            glRotatef(1, 0, -1, 0)
+            glRotatef(10, 0, -1, 0)
         if keys[pygame.K_k]:
             glRotatef(1, 0, 0, 1)
         if keys[pygame.K_l]:
@@ -103,6 +124,7 @@ def main():
         glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)    
         Cube()
         Cube1()
+        Cube2()
         
         pygame.display.flip()
         pygame.time.wait(10)
