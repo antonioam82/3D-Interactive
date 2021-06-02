@@ -147,114 +147,114 @@ def main():
         #if keys[pygame.K_x]:
             #glTranslatef(0.0,0.0,0.1)
         if keys[pygame.K_m]:
-            verticies2[1][0] += 0.01
-            verticies2[0][0] += 0.01
-            verticies2[2][0] += 0.01
-            verticies2[3][0] += 0.01
-            verticies2[6][0] += 0.01
-            verticies2[7][0] += 0.01
-            verticies2[5][0] += 0.01
-            verticies2[4][0] += 0.01
+            verticies2[1][0] += 0.07
+            verticies2[0][0] += 0.07
+            verticies2[2][0] += 0.07
+            verticies2[3][0] += 0.07
+            verticies2[6][0] += 0.07
+            verticies2[7][0] += 0.07
+            verticies2[5][0] += 0.07
+            verticies2[4][0] += 0.07
             
-            verticies1[1][0] -= 0.01
-            verticies1[0][0] -= 0.01
-            verticies1[2][0] -= 0.01
-            verticies1[3][0] -= 0.01
-            verticies1[6][0] -= 0.01
-            verticies1[7][0] -= 0.01
-            verticies1[5][0] -= 0.01
-            verticies1[4][0] -= 0.01
+            verticies1[1][0] -= 0.07
+            verticies1[0][0] -= 0.07
+            verticies1[2][0] -= 0.07
+            verticies1[3][0] -= 0.07
+            verticies1[6][0] -= 0.07
+            verticies1[7][0] -= 0.07
+            verticies1[5][0] -= 0.07
+            verticies1[4][0] -= 0.07
 
-            verticies4[1][1] += 0.01
-            verticies4[0][1] += 0.01
-            verticies4[2][1] += 0.01
-            verticies4[3][1] += 0.01
-            verticies4[6][1] += 0.01
-            verticies4[7][1] += 0.01
-            verticies4[5][1] += 0.01
-            verticies4[4][1] += 0.01
+            verticies4[1][1] += 0.07
+            verticies4[0][1] += 0.07
+            verticies4[2][1] += 0.07
+            verticies4[3][1] += 0.07
+            verticies4[6][1] += 0.07
+            verticies4[7][1] += 0.07
+            verticies4[5][1] += 0.07
+            verticies4[4][1] += 0.07
 
-            verticies5[1][2] -= 0.01
-            verticies5[0][2] -= 0.01
-            verticies5[2][2] -= 0.01
-            verticies5[3][2] -= 0.01
-            verticies5[6][2] -= 0.01
-            verticies5[7][2] -= 0.01
-            verticies5[5][2] -= 0.01
-            verticies5[4][2] -= 0.01
+            verticies5[1][2] -= 0.07
+            verticies5[0][2] -= 0.07
+            verticies5[2][2] -= 0.07
+            verticies5[3][2] -= 0.07
+            verticies5[6][2] -= 0.07
+            verticies5[7][2] -= 0.07
+            verticies5[5][2] -= 0.07
+            verticies5[4][2] -= 0.07
             
-            verticies6[1][2] += 0.01
-            verticies6[0][2] += 0.01
-            verticies6[2][2] += 0.01
-            verticies6[3][2] += 0.01
-            verticies6[6][2] += 0.01
-            verticies6[7][2] += 0.01
-            verticies6[5][2] += 0.01
-            verticies6[4][2] += 0.01
-
-            verticies3[1][1] -= 0.01
-            verticies3[0][1] -= 0.01
-            verticies3[2][1] -= 0.01
-            verticies3[3][1] -= 0.01
-            verticies3[6][1] -= 0.01
-            verticies3[7][1] -= 0.01
-            verticies3[5][1] -= 0.01
-            verticies3[4][1] -= 0.01
+            verticies6[1][2] += 0.07
+            verticies6[0][2] += 0.07
+            verticies6[2][2] += 0.07
+            verticies6[3][2] += 0.07
+            verticies6[6][2] += 0.07
+            verticies6[7][2] += 0.07
+            verticies6[5][2] += 0.07
+            verticies6[4][2] += 0.07
+            
+            verticies3[1][1] -= 0.07
+            verticies3[0][1] -= 0.07
+            verticies3[2][1] -= 0.07
+            verticies3[3][1] -= 0.07
+            verticies3[6][1] -= 0.07
+            verticies3[7][1] -= 0.07
+            verticies3[5][1] -= 0.07
+            verticies3[4][1] -= 0.07
 
         if keys[pygame.K_n]:
-            verticies2[1][0] -= 0.01
-            verticies2[0][0] -= 0.01
-            verticies2[2][0] -= 0.01
-            verticies2[3][0] -= 0.01
-            verticies2[6][0] -= 0.01
-            verticies2[7][0] -= 0.01
-            verticies2[5][0] -= 0.01
-            verticies2[4][0] -= 0.01
+            verticies2[1][0] -= 0.07
+            verticies2[0][0] -= 0.07
+            verticies2[2][0] -= 0.07
+            verticies2[3][0] -= 0.07
+            verticies2[6][0] -= 0.07
+            verticies2[7][0] -= 0.07
+            verticies2[5][0] -= 0.07
+            verticies2[4][0] -= 0.07
+    
+            verticies1[1][0] += 0.07
+            verticies1[0][0] += 0.07
+            verticies1[2][0] += 0.07
+            verticies1[3][0] += 0.07
+            verticies1[6][0] += 0.07
+            verticies1[7][0] += 0.07
+            verticies1[5][0] += 0.07
+            verticies1[4][0] += 0.07
             
-            verticies1[1][0] += 0.01
-            verticies1[0][0] += 0.01
-            verticies1[2][0] += 0.01
-            verticies1[3][0] += 0.01
-            verticies1[6][0] += 0.01
-            verticies1[7][0] += 0.01
-            verticies1[5][0] += 0.01
-            verticies1[4][0] += 0.01
+            verticies4[1][1] -= 0.07
+            verticies4[0][1] -= 0.07
+            verticies4[2][1] -= 0.07
+            verticies4[3][1] -= 0.07
+            verticies4[6][1] -= 0.07
+            verticies4[7][1] -= 0.07
+            verticies4[5][1] -= 0.07
+            verticies4[4][1] -= 0.07
 
-            verticies4[1][1] -= 0.01
-            verticies4[0][1] -= 0.01
-            verticies4[2][1] -= 0.01
-            verticies4[3][1] -= 0.01
-            verticies4[6][1] -= 0.01
-            verticies4[7][1] -= 0.01
-            verticies4[5][1] -= 0.01
-            verticies4[4][1] -= 0.01
+            verticies5[1][2] += 0.07
+            verticies5[0][2] += 0.07
+            verticies5[2][2] += 0.07
+            verticies5[3][2] += 0.07
+            verticies5[6][2] += 0.07
+            verticies5[7][2] += 0.07
+            verticies5[5][2] += 0.07
+            verticies5[4][2] += 0.07
 
-            verticies5[1][2] += 0.01
-            verticies5[0][2] += 0.01
-            verticies5[2][2] += 0.01
-            verticies5[3][2] += 0.01
-            verticies5[6][2] += 0.01
-            verticies5[7][2] += 0.01
-            verticies5[5][2] += 0.01
-            verticies5[4][2] += 0.01
+            verticies6[1][2] -= 0.07
+            verticies6[0][2] -= 0.07
+            verticies6[2][2] -= 0.07
+            verticies6[3][2] -= 0.07
+            verticies6[6][2] -= 0.07
+            verticies6[7][2] -= 0.07
+            verticies6[5][2] -= 0.07
+            verticies6[4][2] -= 0.07
 
-            verticies6[1][2] -= 0.01
-            verticies6[0][2] -= 0.01
-            verticies6[2][2] -= 0.01
-            verticies6[3][2] -= 0.01
-            verticies6[6][2] -= 0.01
-            verticies6[7][2] -= 0.01
-            verticies6[5][2] -= 0.01
-            verticies6[4][2] -= 0.01
-
-            verticies3[1][1] += 0.01
-            verticies3[0][1] += 0.01
-            verticies3[2][1] += 0.01
-            verticies3[3][1] += 0.01
-            verticies3[6][1] += 0.01
-            verticies3[7][1] += 0.01
-            verticies3[5][1] += 0.01
-            verticies3[4][1] += 0.01
+            verticies3[1][1] += 0.07
+            verticies3[0][1] += 0.07
+            verticies3[2][1] += 0.07
+            verticies3[3][1] += 0.07
+            verticies3[6][1] += 0.07
+            verticies3[7][1] += 0.07
+            verticies3[5][1] += 0.07
+            verticies3[4][1] += 0.07
             
 
         
